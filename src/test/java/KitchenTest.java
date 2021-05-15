@@ -1,4 +1,5 @@
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 
@@ -9,7 +10,7 @@ public class KitchenTest {
     Kitchen kitchenWithMany;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         emptyKitchen = new Kitchen();
 
         kitchenWithOne = new Kitchen();
@@ -23,9 +24,8 @@ public class KitchenTest {
     }
 
 
-
     @Test
-    public void testIsEmpty(){
+    public void testIsEmpty() {
 //        boolean expected = true;
 //        boolean actual = true;
 //        assertTrue(expected, actual);
@@ -34,7 +34,7 @@ public class KitchenTest {
     }
 
     @Test
-    public void testAdd(){
+    public void testAdd() {
 //        is it empty? checking before adding to see if kitchen is empty.
         assertTrue(emptyKitchen.isEmpty());
 
@@ -53,7 +53,7 @@ public class KitchenTest {
     }
 
     @Test
-    public void testPop(){
+    public void testPop() {
 //        kitchen is empty.
         assertTrue(emptyKitchen.isEmpty());
 //        added "white corn tortilla".
@@ -68,7 +68,11 @@ public class KitchenTest {
 
 
     @Test
-    public void testContains(){
+    public void testContains() {
+        assertFalse(emptyKitchen.contains("corn tortilla"));
+        assertTrue(kitchenWithOne.contains("Flower Tortilla"));
+        assertTrue(kitchenWithMany.contains("white corn tortilla"));
+
 
     }
 
